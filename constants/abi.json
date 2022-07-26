@@ -1,0 +1,127 @@
+[
+    {
+        "type": "event",
+        "anonymous": false,
+        "name": "eventNewPokemon",
+        "inputs": [
+            {
+                "type": "tuple",
+                "name": "eventNewPokemon",
+                "indexed": true,
+                "components": [
+                    { "type": "uint256", "name": "id" },
+                    { "type": "string", "name": "name" },
+                    { "type": "string", "name": "image" },
+                    {
+                        "type": "tuple[]",
+                        "name": "abilities",
+                        "components": [
+                            { "type": "string", "name": "name" },
+                            { "type": "string", "name": "description" }
+                        ]
+                    },
+                    { "type": "string[]", "name": "types" },
+                    { "type": "string[]", "name": "weaknesses" }
+                ]
+            }
+        ]
+    },
+    {
+        "type": "function",
+        "name": "createPokemon",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+            { "type": "uint256", "name": "_id" },
+            { "type": "string", "name": "_name" },
+            { "type": "string", "name": "_image" },
+            { "type": "string[]", "name": "_namesAbility" },
+            { "type": "string[]", "name": "_descripsAbility" },
+            { "type": "string[]", "name": "_types_name" }
+        ],
+        "outputs": []
+    },
+    {
+        "type": "function",
+        "name": "createTypesToWeaknesses",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+            { "type": "string", "name": "_type" },
+            { "type": "string[]", "name": "_weaknesses" }
+        ],
+        "outputs": []
+    },
+    {
+        "type": "function",
+        "name": "getAllPokemons",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [],
+        "outputs": [
+            {
+                "type": "tuple[]",
+                "components": [
+                    { "type": "uint256", "name": "id" },
+                    { "type": "string", "name": "name" },
+                    { "type": "string", "name": "image" },
+                    {
+                        "type": "tuple[]",
+                        "name": "abilities",
+                        "components": [
+                            { "type": "string", "name": "name" },
+                            { "type": "string", "name": "description" }
+                        ]
+                    },
+                    { "type": "string[]", "name": "types" },
+                    { "type": "string[]", "name": "weaknesses" }
+                ]
+            }
+        ]
+    },
+    { "type": "function", "name": "getAllTypes", "constant": true, "stateMutability": "view", "payable": false, "inputs": [], "outputs": [{ "type": "string[]" }] },
+    {
+        "type": "function",
+        "name": "getMyPokemons",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [],
+        "outputs": [
+            {
+                "type": "tuple[]",
+                "components": [
+                    { "type": "uint256", "name": "id" },
+                    { "type": "string", "name": "name" },
+                    { "type": "string", "name": "image" },
+                    {
+                        "type": "tuple[]",
+                        "name": "abilities",
+                        "components": [
+                            { "type": "string", "name": "name" },
+                            { "type": "string", "name": "description" }
+                        ]
+                    },
+                    { "type": "string[]", "name": "types" },
+                    { "type": "string[]", "name": "weaknesses" }
+                ]
+            }
+        ]
+    },
+    { "type": "function", "name": "getWeaknessesByType", "constant": true, "stateMutability": "view", "payable": false, "inputs": [{ "type": "string", "name": "_type" }], "outputs": [{ "type": "string[]" }] },
+    { "type": "function", "name": "pokemonToOwner", "constant": true, "stateMutability": "view", "payable": false, "inputs": [{ "type": "uint256" }], "outputs": [{ "type": "address" }] },
+    {
+        "type": "function",
+        "name": "pokemons",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [{ "type": "uint256" }],
+        "outputs": [
+            { "type": "uint256", "name": "id" },
+            { "type": "string", "name": "name" },
+            { "type": "string", "name": "image" }
+        ]
+    }
+]
